@@ -8,8 +8,6 @@ This is the official [Heroku buildpack](https://devcenter.heroku.com/articles/bu
 
 Recommended web frameworks include **Django** and **Flask**, among others. The recommended webserver is **Gunicorn**. There are no restrictions around what software can be used (as long as it's pip-installable). Web processes must bind to `$PORT`, and only the HTTP protocol is permitted for incoming connections.
 
-Python packages with C dependencies that are not [available on the stack image](https://devcenter.heroku.com/articles/stack-packages) are generally not supported, unless `manylinux` wheels are provided by the package maintainers (common). For recommended solutions, check out [this article](https://devcenter.heroku.com/articles/python-c-deps) for more information.
-
 See it in Action
 ----------------
 ```
@@ -44,7 +42,7 @@ A `requirements.txt` must be present at the root of your application's repositor
 
 To specify your python version, you also need a `runtime.txt` file - unless you are using the default Python runtime version.
 
-Current default Python Runtime: Python 3.6.12
+Current default Python Runtime: Python 3.9.4
 
 Alternatively, you can provide a `setup.py` file, or a `Pipfile`.
 Using `pipenv` will generate `runtime.txt` at build time if one of the field `python_version` or `python_full_version` is specified in the `requires` section of your `Pipfile`.
@@ -62,8 +60,8 @@ Specify a Python Runtime
 
 Supported runtime options include:
 
-- `python-3.9.1`
-- `python-3.8.7`
-- `python-3.7.9`
-- `python-3.6.12`
+- `python-3.9.4`
+- `python-3.8.9`
+- `python-3.7.10`
+- `python-3.6.13`
 - `python-2.7.18`

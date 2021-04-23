@@ -4,7 +4,7 @@ require_relative '../spec_helper'
 
 RSpec.describe 'Compile hooks' do
   context 'when an app has bin/pre_compile and bin/post_compile scripts' do
-    let(:app) { new_app('spec/fixtures/hooks', config: { 'SOME_APP_CONFIG_VAR' => '1' }) }
+    let(:app) { Hatchet::Runner.new('spec/fixtures/hooks', config: { 'SOME_APP_CONFIG_VAR' => '1' }) }
 
     it 'runs the hooks with the correct environment' do
       expected_env_vars = %w[
@@ -46,7 +46,7 @@ RSpec.describe 'Compile hooks' do
           remote: -----> Running pre-compile hook
           remote: pre_compile ran with env vars:
           remote: #{expected_env_vars.join("\nremote: ")}
-          remote: -----> Installing python-#{DEFAULT_PYTHON_VERSION}
+          remote: -----> No Python version was specified. Using the buildpack default: python-#{DEFAULT_PYTHON_VERSION}
           remote: .*
           remote: -----> Installing requirements with pip
           remote: -----> Running post-compile hook
