@@ -80,7 +80,7 @@ RSpec.describe 'Python version support' do
     let(:allow_failure) { false }
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_2.7', allow_failure: allow_failure) }
 
-    context 'when using Heroku-16 or Heroku-18', stacks: %w[heroku-16 heroku-18] do
+    context 'when using Heroku-18', stacks: %w[heroku-18] do
       it 'builds with Python 2.7.18' do
         app.deploy do |app|
           expect(clean_output(app.output)).to include(<<~OUTPUT)
@@ -111,7 +111,7 @@ RSpec.describe 'Python version support' do
     let(:allow_failure) { false }
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.4', allow_failure: allow_failure) }
 
-    context 'when using Heroku-16 or Heroku-18', stacks: %w[heroku-16 heroku-18] do
+    context 'when using Heroku-18', stacks: %w[heroku-18] do
       it 'builds with Python 3.4.10' do
         app.deploy do |app|
           # The Pip deprecation warning is due to the newest Pip that works on Python 3.4
@@ -144,7 +144,7 @@ RSpec.describe 'Python version support' do
     let(:allow_failure) { false }
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.5', allow_failure: allow_failure) }
 
-    context 'when using Heroku-16 or Heroku-18', stacks: %w[heroku-16 heroku-18] do
+    context 'when using Heroku-18', stacks: %w[heroku-18] do
       include_examples 'builds with the requested Python version', LATEST_PYTHON_3_5
     end
 
@@ -156,25 +156,25 @@ RSpec.describe 'Python version support' do
     end
   end
 
-  context 'when runtime.txt contains python-3.6.13' do
+  context 'when runtime.txt contains python-3.6.14' do
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.6') }
 
     include_examples 'builds with the requested Python version', LATEST_PYTHON_3_6
   end
 
-  context 'when runtime.txt contains python-3.7.10' do
+  context 'when runtime.txt contains python-3.7.11' do
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.7') }
 
     include_examples 'builds with the requested Python version', LATEST_PYTHON_3_7
   end
 
-  context 'when runtime.txt contains python-3.8.9' do
+  context 'when runtime.txt contains python-3.8.11' do
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.8') }
 
     include_examples 'builds with the requested Python version', LATEST_PYTHON_3_8
   end
 
-  context 'when runtime.txt contains python-3.9.4' do
+  context 'when runtime.txt contains python-3.9.6' do
     let(:app) { Hatchet::Runner.new('spec/fixtures/python_3.9') }
 
     include_examples 'builds with the requested Python version', LATEST_PYTHON_3_9

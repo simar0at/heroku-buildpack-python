@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+
+## v197 (2021-06-28)
+
+- Python 3.6.14, 3.7.11, 3.8.11 and 3.9.6 are now available (CPython) ([#1219](https://github.com/heroku/heroku-buildpack-python/pull/1219)).
+- The default Python version for new apps is now 3.9.6 (previously 3.9.5) ([#1219](https://github.com/heroku/heroku-buildpack-python/pull/1219)).
+- Remove testing & binary generation support for Heroku-16 ([#1214](https://github.com/heroku/heroku-buildpack-python/pull/1214)).
+
+## v196 (2021-05-25)
+
+- Django collectstatic is no longer skipped if `DISABLE_COLLECTSTATIC` is set to `0` or the empty string ([#1208](https://github.com/heroku/heroku-buildpack-python/pull/1208)).
+- If Django collectstatic is skipped, output the reason why ([#1208](https://github.com/heroku/heroku-buildpack-python/pull/1208)).
+- Output a deprecation warning when collectstatic is skipped via the `.heroku/collectstatic_disabled` file ([#1208](https://github.com/heroku/heroku-buildpack-python/pull/1208)).
+- Remove redundant "Cedar-14 is unsupported" error ([#1212](https://github.com/heroku/heroku-buildpack-python/pull/1212)).
+
+## v195 (2021-05-03)
+
+- Python 3.8.10 and 3.9.5 are now available (CPython) ([#1204](https://github.com/heroku/heroku-buildpack-python/pull/1204)).
+
+## v194 (2021-04-26)
+
 - Always output the Python version used and reason why ([#1196](https://github.com/heroku/heroku-buildpack-python/pull/1196)).
 
 ## v193 (2021-04-13)
